@@ -38,4 +38,10 @@ describe("Email Checker", () => {
 
     expect(actual).toBe(false);
   });
+
+  it("should return true when given a valid email", () => {
+    const actual = emailChecker.check("sebastien@vinci.be");
+
+    expect(actual).toBe(true);
+  })
 });
