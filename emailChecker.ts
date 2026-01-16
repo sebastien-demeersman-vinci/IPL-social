@@ -6,7 +6,7 @@ export class EmailChecker {
             return false;
         if (this.containsAtInLastChar(email))
             return false;
-        if (email.includes(" "))
+        if (this.containsSpace(email))
             return false;
         return true;
     }
@@ -21,5 +21,9 @@ export class EmailChecker {
 
     private containsAtInLastChar(email: string): boolean {
         return email.charAt(email.length-1) === '@';
+    }
+
+    private containsSpace(email: string): boolean {
+        return email.includes(" ");
     }
 }
