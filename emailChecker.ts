@@ -1,0 +1,7 @@
+export class EmailChecker {
+    check(email: string): boolean {
+        if (!email.includes("@"))
+            return false;
+        return true;
+    }
+}
