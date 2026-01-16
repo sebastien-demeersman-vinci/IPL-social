@@ -32,4 +32,10 @@ describe("Email Checker", () => {
 
     expect(actual).toBe(false);
   });
+
+  it("should return false when given an email with a . in last char", () => {
+    const actual = emailChecker.check("sebastien@vinci");
+
+    expect(actual).toBe(false);
+  });
 });

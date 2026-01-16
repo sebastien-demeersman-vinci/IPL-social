@@ -10,6 +10,8 @@ export class EmailChecker {
             return false;
         if (!this.containsPointAfterAt(email))
             return false;
+        if (email.charAt(email.length-1) === '.')
+            return false;
         return true;
     }
 
