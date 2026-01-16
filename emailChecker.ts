@@ -8,8 +8,7 @@ export class EmailChecker {
             return false;
         if (this.containsSpace(email))
             return false;
-        const emailSplited = email.split("@");
-        if (!emailSplited[1].includes("."))
+        if (!this.containsPointAfterAt(email))
             return false;
         return true;
     }
@@ -28,5 +27,10 @@ export class EmailChecker {
 
     private containsSpace(email: string): boolean {
         return email.includes(" ");
+    }
+
+    private containsPointAfterAt(email: string): boolean {
+        const emailSplited = email.split("@");
+        return emailSplited[1].includes(".");
     }
 }
