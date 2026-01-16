@@ -8,6 +8,9 @@ export class EmailChecker {
             return false;
         if (this.containsSpace(email))
             return false;
+        const emailSplited = email.split("@");
+        if (!emailSplited[1].includes("."))
+            return false;
         return true;
     }
 

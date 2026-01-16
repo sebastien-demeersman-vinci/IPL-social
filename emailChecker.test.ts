@@ -26,4 +26,10 @@ describe("Email Checker", () => {
 
     expect(actual).toBe(false);
   });
+
+  it("should return false when given an email without a . after @", () => {
+    const actual = emailChecker.check("sebastien@vinci");
+
+    expect(actual).toBe(false);
+  });
 });
