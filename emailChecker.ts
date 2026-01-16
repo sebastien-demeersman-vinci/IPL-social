@@ -1,6 +1,6 @@
 export class EmailChecker {
     check(email: string): boolean {
-        if (!email.includes("@"))
+        if (!this.containsAt(email))
             return false;
         if (email.charAt(0) === '@')
             return false;
@@ -9,5 +9,9 @@ export class EmailChecker {
         if (email.includes(" "))
             return false;
         return true;
+    }
+
+    private containsAt(email: string): boolean {
+        return email.includes("@");
     }
 }
