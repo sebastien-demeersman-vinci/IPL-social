@@ -4,6 +4,8 @@ export class EmailChecker {
             return false;
         if (email.charAt(0) === '@')
             return false;
+        if (email.charAt(email.length-1) === '@')
+            return false;
         return true;
     }
 }
