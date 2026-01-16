@@ -4,7 +4,7 @@ export class EmailChecker {
             return false;
         if (this.containsAtInFirstChar(email))
             return false;
-        if (email.charAt(email.length-1) === '@')
+        if (this.containsAtInLastChar(email))
             return false;
         if (email.includes(" "))
             return false;
@@ -17,5 +17,9 @@ export class EmailChecker {
 
     private containsAtInFirstChar(email: string): boolean {
         return email.charAt(0) === '@';
+    }
+
+    private containsAtInLastChar(email: string): boolean {
+        return email.charAt(email.length-1) === '@';
     }
 }
