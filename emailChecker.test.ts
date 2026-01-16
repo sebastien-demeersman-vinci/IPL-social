@@ -20,4 +20,10 @@ describe("Email Checker", () => {
 
     expect(actual).toBe(false);
   });
+
+  it("should return false when given an email with a space", () => {
+    const actual = emailChecker.check("sebastien @vinci.be");
+
+    expect(actual).toBe(false);
+  });
 });
