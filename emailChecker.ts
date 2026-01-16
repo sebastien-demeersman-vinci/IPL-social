@@ -10,7 +10,7 @@ export class EmailChecker {
             return false;
         if (!this.containsPointAfterAt(email))
             return false;
-        if (email.charAt(email.length-1) === '.')
+        if (this.containsPointInLastChar(email))
             return false;
         return true;
     }
@@ -34,5 +34,9 @@ export class EmailChecker {
     private containsPointAfterAt(email: string): boolean {
         const emailSplited = email.split("@");
         return emailSplited[1].includes(".");
+    }
+
+    private containsPointInLastChar(email: string): boolean {
+        return email.charAt(email.length-1) === '.';
     }
 }
